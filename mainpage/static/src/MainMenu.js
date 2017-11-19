@@ -2,8 +2,9 @@ Ball.MainMenu = function(game) {};
 Ball.MainMenu.prototype = {
 	create: function() {
 		this.add.sprite(0, 0, 'back');
-		this.gameTitle = this.add.sprite(400, 0, 'menu');
-		
+		this.gameTitle = this.add.sprite(400, 0, 'logo');
+		//this.gameTitle.anchor.set(0,0)
+	
 		this.gameTitle.alpha = 0;
 		this.gameTitle.anchor.set(0.5,0);
 		tween = this.game.add.tween(this.gameTitle).to( { alpha: 1 }, 2000, "Linear", true);

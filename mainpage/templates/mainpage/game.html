@@ -1,0 +1,197 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Juego Cfn</title>
+	<link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
+	<!--
+	<style> body { margin: 0; background: #2B2E31 url(img/screen-bg.png) repeat; } </style>
+	-->
+	<style> body { margin: 0; background: #2B2E31; } </style>
+
+	<script src="{% static 'src/phaser.js' %}"></script>
+	<script src="{% static 'src/Boot.js' %}"></script>
+	<script src="{% static 'src/MainMenu.js' %}"></script>
+	<script src="{% static 'src/Howto.js' %}"></script>
+	<script src="{% static 'src/Preloader.js' %}"></script>
+	<script src="{% static 'src/Game.js' %}"></script>
+	<script src="{% static 'src/Carrera.js' %}"></script>
+	<script src="{% static 'src/GameOverCarrera.js' %}"></script>
+	<script src="{% static 'src/WinCarrera.js' %}"></script>
+	<script src="{% static 'src/AnimCarrera.js' %}"></script>
+	<script src="{% static 'src/Desarrollo.js' %}"></script>
+	<script src="{% static 'src/WinDesarrollo.js' %}"></script>
+	<script src="{% static 'src/GameOverDesarrollo.js' %}"></script>
+	<script src="{% static 'src/Mapa.js' %}"></script>
+
+
+</head>
+<body>
+
+	<!--
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1059689310722149',
+      xfbml      : true,
+      version    : 'v2.4'
+    });
+
+    // ADD ADDITIONAL FACEBOOK CODE HERE
+  };
+
+	function onLogin(response) {
+  if (response.status == 'connected') {
+    FB.api('/me?fields=first_name', function(data) {
+      var welcomeBlock = document.getElementById('fb-welcome');
+      welcomeBlock.innerHTML = 'Hello, ' + data.first_name + '!';
+    });
+  }
+}
+
+FB.getLoginStatus(function(response) {
+  // Check login status on load, and if the user is
+  // already logged in, go directly to the welcome message.
+  if (response.status == 'connected') {
+    onLogin(response);
+  } else {
+    // Otherwise, show Login dialog first.
+    FB.login(function(response) {
+      onLogin(response);
+    }, {scope: 'user_friends, email'});
+  }
+});
+
+
+
+
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "//connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
+-->
+
+
+<h1 id="fb-welcome"></h1>
+
+
+<script>
+    var url_bg = "{% static 'img/loading-bg.png' %}";
+    var url_bar = "{% static 'img/loading-bar.png' %}";
+    var ball = "{% static 'img/ball.png' %}"
+    var hole =  "{% static 'img/hole.png' %}"
+    var elementw = "{% static 'img/element-w.png' %}"
+    var elementh =  "{% static 'img/element-h.png' %}"
+    var panel = "{% static 'img/panel.png' %}"
+    var title = "{% static 'img/title.png' %}"
+    var button_pause = "{% static 'img/button-pause.png' %}"
+    var screen_bg = "{% static 'img/screen-bg.png' %}";
+    var screen_gameover = "{% static 'resources/images/screen-gameover.png' %}";
+    var screen_gameover2 =  "{% static 'resources/images/screen-gameover2.png' %}";
+    var intro = "{% static 'resources/images/intro.png' %}";
+    var banda = "{% static 'resources/images/BANDA.png' %}";
+    var fabrica = "{% static 'resources/images/Fabrica.png' %}";
+    var mainmenu =  "{% static 'img/screen-mainmenu.png' %}";
+    var howtoplay = "{% static 'img/screen-howtoplay.png' %}";
+    var horizontal =  "{% static 'img/border-horizontal.png' %}";
+    var vertical = "{% static 'img/border-vertical.png' %}";
+    var fondo2 = "{% static 'img/fondo2.jpg' %}";
+    var fondo_carrera =  "{% static 'img/fondo_carrera.jpg' %}";
+    var cx =  "{% static 'resources/images/cx.png' %}";
+    var gameovervehiculo = "{% static 'resources/images/gameovervehiculo.png' %}";
+    var HasGanadoCarrera =  "{% static 'resources/images/HasGanadoCarrera.png' %}";
+    var fondo_carrera = "{% static 'resources/images/ESCENARIO 2.png' %}";
+    var back = "{% static 'resources/images/background.png' %}";
+    var menu = "{% static 'img/menu.png' %}";
+    var planetaRojo =  "{% static 'img/planetaRojo.png' %}";
+    var nave_1mini = "{% static 'resources/images/nave-camisa-D -mini.png' %}";
+    var nave_2mini = "{% static 'resources/images/nave_03mini.png' %}";
+    var planeta = "{% static 'img/planeta.png' %}";
+    var planetaSprite = "{% static 'img/planeta.png' %}";
+    var prota = "{% static 'resources/images/prota.png' %}";
+    var anta = "{% static 'resources/images/antagonista.png' %}";
+    var cfn = "{% static 'resources/images/planeta_08.png' %}";
+    var carrera = "{% static 'resources/images/planeta_01.png' %}";
+    var industria = "{% static 'resources/images/planeta_02.png' %}";
+    var planeta3 = "{% static 'resources/images/planeta_03.png' %}";
+    var planeta4 = "{% static 'resources/images/planeta_04.png' %}";
+    var planeta5 = "{% static 'resources/images/planeta_05.png' %}";
+    var planeta6 = "{% static 'resources/images/planeta_06.png' %}";
+    var planeta7 = "{% static 'resources/images/planeta_07.png' %}";
+    var glow1 = "{% static 'resources/images/LightRotate1.png' %}";
+    var roboto = "{% static 'resources/images/ROBOTA.png' %}";
+    var future_png = "{% static 'resources/fonts/espace/font.png' %}";
+	var button_audio = "{% static 'img/button-audio.png' %}";
+	var button_start = "{% static 'img/button-start.png' %}";
+	var botonAtlas_png = "{% static 'img/button_texture_atlas.png' %}";
+	var botonAtlas_json = "{% static 'src/button_texture_atlas.json' %}";
+    var future_font = "{% static 'resources/fonts/espace/font.fnt' %}";
+    var bounce_ogg = "{% static 'audio/bounce.ogg' %}";
+    var bounce_mp3 = "{% static 'audio/bounce.mp3' %}";
+    var bounce_m4a = "{% static 'audio/bounce.m4a' %}";
+    var logojuego="{% static 'img/main.png' %}";
+    var bienvenida="{% static 'img/andes.png' %}";
+
+    //var gifsimon="{% static 'img/bolirun."
+
+    //RPG
+    var csv01 = "{% static 'resources/maps/swproj.csv' %}";
+    var esc1 = "{% static 'resources/maps/esc1.png' %}";
+    var esc2 = "{% static 'resources/maps/esc2.png' %}";
+    var esc3 = "{% static 'resources/maps/esc3.png' %}";
+    var ext1 = "{% static 'resources/maps/ext1.jpg' %}";
+    var ext2 = "{% static 'resources/maps/ext2.png' %}";
+    var pisos1 = "{% static 'resources/maps/pisos1.png' %}";
+    var pisos2 = "{% static 'resources/maps/pisos2.jpg' %}";
+    var casas1 = "{% static 'resources/maps/casas1.jpg' %}";
+    var spaceman = "{% static 'resources/maps/spaceman.png' %}";
+    var personajepasoiz="{% static 'resources/images/simonizquierda.png' %}";
+    var personajepasoder="{% static 'resources/images/simonderecha.png' %}";
+    var mapa1="{% static 'resources/images/mapa1.png' %}";
+
+
+</script>
+
+
+<script>
+(function() {
+	var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'game');
+	game.state.add('Boot', Ball.Boot);
+	game.state.add('MainMenu', Ball.MainMenu);
+	game.state.add('Howto', Ball.Howto);
+	game.state.add('Preloader', Ball.Preloader);
+	game.state.add('Carrera', Ball.Carrera);
+	game.state.add('WinCarrera', Ball.WinCarrera);
+	game.state.add('Game', Ball.Game);
+	game.state.add('AnimCarrera', Ball.AnimCarrera);
+	game.state.add('Desarrollo', Ball.Desarrollo);
+  	game.state.add('Mapa', Ball.Mapa);
+	game.state.add('GameOverDesarrollo', Ball.GameOverDesarrollo);
+	game.state.add('WinDesarrollo', Ball.WinDesarrollo);
+	game.state.add('GameOverCarrera', Ball.GameOverCarrera);
+
+	game.state.start('Boot');
+})();
+
+</script>
+
+
+
+
+
+<div
+  class="fb-like"
+  data-share="true"
+  data-width="450"
+  data-show-faces="true">
+</div>
+
+
+
+</body>
+</html>

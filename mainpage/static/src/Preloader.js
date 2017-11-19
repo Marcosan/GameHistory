@@ -20,7 +20,6 @@ Ball.Preloader.prototype = {
 		this.load.image('screen-bg', screen_bg);
 		this.load.image('screen-gameover', screen_gameover);
 		this.load.image('screen-gameover2',screen_gameover2);
-		this.load.image('ComoJugarDesarrollo',comojugardesarrollo );
 		this.load.image('intro', intro);
 		this.load.image('banda', banda);
 		this.load.image('fabrica', fabrica);
@@ -32,7 +31,6 @@ Ball.Preloader.prototype = {
 		this.load.image('fondo_carrera',fondo_carrera);
 		this.load.image('screen-gameoverc',cx);
 		this.load.image('screen-gameoverrenova', gameovervehiculo);
-		this.load.image('ComoJugarCarrera', ComoJugarCarrera);
 		this.load.image('HasGanadoCarrera',HasGanadoCarrera);
 		//this.load.image('fondo_carrera', "{% static 'resources/images/ESCENARIO 2.png' %}");
 	
@@ -40,6 +38,10 @@ Ball.Preloader.prototype = {
 		this.load.image('back',back);
 		this.load.image('menu',menu);
 		this.load.image('planetaRojo',planetaRojo);
+
+
+		this.load.image('logo',logojuego);
+		this.load.image('bienvenida',bienvenida);
 		
 		//this.game.load.spritesheet('planeta', "{% static 'img/planeta.png', 193, 71);
 		this.game.load.spritesheet('planeta', planeta);
@@ -71,8 +73,17 @@ Ball.Preloader.prototype = {
 
 
 		this.game.load.tilemap('map', csv01, null, Phaser.Tilemap.CSV);
-        this.game.load.image('tiles', catastrophi_tiles_16);
         this.game.load.spritesheet('player', spaceman, 16, 16);
+
+        this.game.load.image('esc1', esc1);
+        this.game.load.image('esc2', esc2);
+        this.game.load.image('esc3', esc3);
+        this.game.load.image('ext1', ext1);
+        this.game.load.image('ext2', ext2);
+        this.game.load.image('pisos1', pisos1);
+        this.game.load.image('pisos2', pisos2);
+        this.game.load.image('casas1', casas1);
+        this.game.load.image('mapa1', mapa1);
 	},
 	create: function() {
 		this.game.state.start('MainMenu');

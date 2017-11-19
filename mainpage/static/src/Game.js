@@ -58,19 +58,18 @@ Ball.Game.prototype = {
     inicio: function() {
         
     //  Because we're loading CSV map data we have to specify the tile size here or we can't render it
-    map = this.game.add.tilemap('map', 16, 16);
+    //map = this.game.add.tilemap('map', 32, 32);
 
-    //  Now add in the tileset
-    map.addTilesetImage('tiles');
-    
+    //map.addTilesetImage('esc2');
+    this.game.add.sprite(80, 0, 'mapa1');
     //  Create our layer
-    layer = map.createLayer(0);
+    //layer = map.createLayer(0);
 
     //  Resize the world
-    layer.resizeWorld();
+    //layer.resizeWorld();
 
     //  This isn't totally accurate, but it'll do for now
-    map.setCollisionBetween(54, 83);
+    //map.setCollisionBetween(54, 83);
 
     //  Un-comment this on to see the collision tiles
     // layer.debug = true;
@@ -90,8 +89,8 @@ Ball.Game.prototype = {
 
     cursors = this.game.input.keyboard.createCursorKeys();
 
-    var help = this.game.add.text(16, 16, 'Arrows to move', { font: '14px Arial', fill: '#ffffff' });
-    help.fixedToCamera = true;
+    //var help = this.game.add.text(16, 16, 'Arrows to move', { font: '14px Arial', fill: '#ffffff' });
+    //help.fixedToCamera = true;
 
 },
 

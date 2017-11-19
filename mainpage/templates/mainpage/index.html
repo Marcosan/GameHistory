@@ -1,188 +1,394 @@
 {% load staticfiles %}
 <!DOCTYPE html>
-<html>
-<head>
-	<meta charset="utf-8" />
-	<title>Juego Cfn</title>
-	<link rel="shortcut icon" href="favicon.png" type="image/x-icon" />
-	<!--
-	<style> body { margin: 0; background: #2B2E31 url(img/screen-bg.png) repeat; } </style>
-	-->
-	<style> body { margin: 0; background: #2B2E31; } </style>
-
-	<script src="{% static 'src/phaser.js' %}"></script>
-	<script src="{% static 'src/Boot.js' %}"></script>
-	<script src="{% static 'src/MainMenu.js' %}"></script>
-	<script src="{% static 'src/Howto.js' %}"></script>
-	<script src="{% static 'src/Preloader.js' %}"></script>
-	<script src="{% static 'src/Game.js' %}"></script>
-	<script src="{% static 'src/Carrera.js' %}"></script>
-	<script src="{% static 'src/GameOverCarrera.js' %}"></script>
-	<script src="{% static 'src/ComoJugarCarrera.js' %}"></script>
-	<script src="{% static 'src/WinCarrera.js' %}"></script>
-	<script src="{% static 'src/AnimCarrera.js' %}"></script>
-	<script src="{% static 'src/Desarrollo.js' %}"></script>
-	<script src="{% static 'src/WinDesarrollo.js' %}"></script>
-	<script src="{% static 'src/GameOverDesarrollo.js' %}"></script>
-	<script src="{% static 'src/ComoJugarDesarrollo.js' %}"></script>
-	<script src="{% static 'src/Mapa.js' %}"></script>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>Apex App : Home</title>
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/icon" href="images/favicon.ico"/>
+    <!-- Font Awesome -->
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <!-- Slick slider -->
+    <link href="{% static 'css/slick.css' %}" rel="stylesheet">
+    <!-- Theme color -->
+    <link id="switcher" href="{% static 'css/theme-color/default-theme.css' %}" rel="stylesheet">
 
 
-</head>
-<body>
+    <!-- Main Style -->
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
 
-	<!--
-<script>
-  window.fbAsyncInit = function() {
-    FB.init({
-      appId      : '1059689310722149',
-      xfbml      : true,
-      version    : 'v2.4'
-    });
+    <!-- Fonts -->
 
-    // ADD ADDITIONAL FACEBOOK CODE HERE
-  };
+    <!-- Open Sans for body and title font -->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800" rel="stylesheet">
+ 
+ 
+	
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+  <body>
 
-	function onLogin(response) {
-  if (response.status == 'connected') {
-    FB.api('/me?fields=first_name', function(data) {
-      var welcomeBlock = document.getElementById('fb-welcome');
-      welcomeBlock.innerHTML = 'Hello, ' + data.first_name + '!';
-    });
-  }
-}
+  
+  	
+  	<!-- Start Header -->
+	<header id="mu-header" class="" role="banner">
+		<div class="mu-header-overlay" style="background-color: #332326;">
+			<div class="container">
+				<div class="mu-header-area">
 
-FB.getLoginStatus(function(response) {
-  // Check login status on load, and if the user is
-  // already logged in, go directly to the welcome message.
-  if (response.status == 'connected') {
-    onLogin(response);
-  } else {
-    // Otherwise, show Login dialog first.
-    FB.login(function(response) {
-      onLogin(response);
-    }, {scope: 'user_friends, email'});
-  }
-});
+					<!-- Start Logo 
+					<div class="mu-logo-area">
+						<!-- text based logo -->
+						
+						<!-- image based logo -->
+						<!-- <a class="mu-logo" href="#"><img src="images/logo.png" alt="logo img"></a> 
+					</div>
+					<!-- End Logo -->
+
+					<!-- Start header featured area -->
+					<div class="mu-header-featured-area">
+					
+					
+
+						<div class="mu-header-featured-content" >
+							<h1>Bienvenidos a <span>ANDA ANDES</span></h1>
+								<img src="{% static 'images/mocks.png' %}" alt="iphone image">
+							<div class="mu-app-download-area">
+								<h4>Descargar App</h4>
+								<a class="mu-apple-btn" href="#"><i class="fa fa-apple"></i><span>apple store</span></a>
+								<a class="mu-google-btn" href="#"><i class="fa fa-android"></i><span>google play</span></a>
+								<!-- <a class="mu-windows-btn" href="#"><i class="fa fa-windows"></i><span>windows store</span></a> -->
+							</div>
+
+						</div>
+					</div>
+					<!-- End header featured area -->
+
+				</div>
+			</div>
+		</div>
+	</header>
+	<!-- End Header -->
+
+	<!-- Start Menu -->
+	<button class="mu-menu-btn">
+		<i class="fa fa-bars"></i>
+	</button>
+	<div class="mu-menu-full-overlay">
+		<div class="mu-menu-full-overlay-inner">
+			<a class="mu-menu-close-btn" href="#"><span class="mu-line"></span></a>
+			<nav class="mu-menu" role="navigation">
+				<ul>
+					<li><a href="#mu-header">Header</a></li>
+					<li><a href="#mu-feature">App Feature</a></li>
+					<li><a href="/game/">Jugar</a></li>
+					<li><a href="#mu-apps-screenshot">Apps Screenshot</a></li>
+					<li><a href="#mu-download">Download</a></li>
+					<li><a href="#mu-faq">FAQ</a></li>
+					<li><a href="#mu-contact">Get In Touch</a></li>
+				</ul>
+			</nav>
+		</div>
+	</div>
+	<!-- End Menu -->
+
+	
+	
+	<!-- Start main content -->
+		
+	<main role="main">
+
+		<!-- Start Feature -->
+		<section id="mu-feature">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="mu-feature-area">
+
+							<div class="mu-title-area">
+								<h2 class="mu-title">Aprende Jugando</h2>
+								<span class="mu-title-dot"></span>
+								<p>Trabajamos para que los ninos crezcan no solo conociendo la historia, si no sintiendo verdadero amor a la patria y orgullo asi los personajes que marcaron nuestra historia.</p>
+							</div>
+
+							<!-- Start Feature Content -->
+							<div class="mu-feature-content">
+								<div class="row">
+									<div class="col-md-6">
+										<div class="mu-feature-content-left">
+											<img class="mu-profile-img" src="{% static 'images/simonsketchbio.jpg' %}" alt="Simon Bolivar">
+										</div>
+									</div>
+								
+								</div>
+							</div>
+							<!-- End Feature Content -->
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Feature -->
+
+		<!-- Start Video -->
+		<section id="mu-video">
+			<div class="mu-video-overlay">
+				<div class="container">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="mu-video-area">
+								<h2>Jugar</h2>
+								<a class="mu-video-play-btn" href="#"><i class="fa fa-play" aria-hidden="true"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!-- Start Video content -->
+			<div class="mu-video-content">
+				<div class="mu-video-iframe-area">
+					<a class="mu-video-close-btn" href="#"><i class="fa fa-times" aria-hidden="true"></i></a>
+					<!-- Aqui el link -->
+					<iframe class="mu-video-iframe" width="854" height="480" src="https://www.youtube.com/embed/9r40_ffCZ_IF" frameborder="0" allowfullscreen></iframe> 
+				</div>
+			</div>
+			<!-- End Video content -->
+
+		</section>
+		<!-- End Video -->
+
+		<!-- Start Apps Screenshot -->
+		<section id="mu-apps-screenshot">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="mu-apps-screenshot-area">
+
+							<div class="mu-title-area">
+								<h2 class="mu-title">APPS SCREENSHOT</h2>
+								<span class="mu-title-dot"></span>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis unde, ut sapiente et voluptatum facilis consectetur incidunt provident asperiores at necessitatibus nulla sequi voluptas libero quasi explicabo veritatis minima porro.</p>
+							</div>
 
 
+							<!-- Start Apps Screenshot Content -->
+							<div class="mu-apps-screenshot-content">
+
+								<div class="mu-apps-screenshot-slider">
+
+									<div class="mu-single-screeshot">
+										<img src="{% static 'images/screenshot/01.jpg' %}" alt="App screenshot img">
+									</div>
+
+									<div class="mu-single-screeshot">
+										<img src="{% static 'images/screenshot/02.jpg' %}" alt="App screenshot img">
+									</div>
+
+									<div class="mu-single-screeshot">
+										<img src="{% static 'images/screenshot/03.jpg' %}" alt="App screenshot img">
+									</div>
+
+									<div class="mu-single-screeshot">
+										<img src="{% static 'images/screenshot/04.jpg' %}" alt="App screenshot img">
+									</div>
+
+									<div class="mu-single-screeshot">
+										<img src="{% static 'images/screenshot/05.jpg' %}" alt="App screenshot img">
+									</div>
+
+									<div class="mu-single-screeshot">
+										<img src="{% static 'images/screenshot/01.jpg' %}" alt="App screenshot img">
+									</div>
+
+									<div class="mu-single-screeshot">
+										<img src="{% static 'images/screenshot/02.jpg' %}" alt="App screenshot img">
+									</div>
+
+									<div class="mu-single-screeshot">
+										<img src="{% static 'images/screenshot/03.jpg' %}" alt="App screenshot img">
+									</div>
+
+									<div class="mu-single-screeshot">
+										<img src="{% static 'images/screenshot/04.jpg' %}" alt="App screenshot img">
+									</div>
+
+									<div class="mu-single-screeshot">
+										<img src="{% static 'images/screenshot/05.jpg' %}" alt="App screenshot img">
+									</div>
+
+								</div>
+
+							</div>
+							<!-- End Apps Screenshot Content -->
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Apps Screenshot -->
+
+		<!-- Start Download -->
+		<section id="mu-download">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="mu-download-area">
+
+							<div class="mu-title-area">
+								<h2 class="mu-title">GET THE APP</h2>
+								<span class="mu-title-dot"></span>
+								<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Blanditiis unde, ut sapiente et voluptatum facilis consectetur incidunt provident asperiores at necessitatibus nulla sequi voluptas libero quasi explicabo veritatis minima porro.</p>
+							</div>
 
 
-  (function(d, s, id){
-     var js, fjs = d.getElementsByTagName(s)[0];
-     if (d.getElementById(id)) {return;}
-     js = d.createElement(s); js.id = id;
-     js.src = "//connect.facebook.net/en_US/sdk.js";
-     fjs.parentNode.insertBefore(js, fjs);
-   }(document, 'script', 'facebook-jssdk'));
-</script>
--->
+							<div class="mu-download-content">
+								<a class="mu-apple-btn" href="#"><i class="fa fa-apple"></i><span>apple store</span></a>
+								<a class="mu-google-btn" href="#"><i class="fa fa-android"></i><span>google play</span></a>
+								<a class="mu-windows-btn" href="#"><i class="fa fa-windows"></i><span>windows store</span></a>
+							</div>
 
 
-<h1 id="fb-welcome"></h1>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Download -->
 
+	
 
-<script>
-    var url_bg = "{% static 'img/loading-bg.png' %}";
-    var url_bar = "{% static 'img/loading-bar.png' %}";
-    var ball = "{% static 'img/ball.png' %}"
-    var hole =  "{% static 'img/hole.png' %}"
-    var elementw = "{% static 'img/element-w.png' %}"
-    var elementh =  "{% static 'img/element-h.png' %}"
-    var panel = "{% static 'img/panel.png' %}"
-    var title = "{% static 'img/title.png' %}"
-    var button_pause = "{% static 'img/button-pause.png' %}"
-    var screen_bg = "{% static 'img/screen-bg.png' %}";
-    var screen_gameover = "{% static 'resources/images/screen-gameover.png' %}";
-    var screen_gameover2 =  "{% static 'resources/images/screen-gameover2.png' %}";
-    var comojugardesarrollo = "{% static 'resources/images/comojugardesarrollo.png' %}";
-    var intro = "{% static 'resources/images/intro.png' %}";
-    var banda = "{% static 'resources/images/BANDA.png' %}";
-    var fabrica = "{% static 'resources/images/Fabrica.png' %}";
-    var mainmenu =  "{% static 'img/screen-mainmenu.png' %}";
-    var howtoplay = "{% static 'img/screen-howtoplay.png' %}";
-    var horizontal =  "{% static 'img/border-horizontal.png' %}";
-    var vertical = "{% static 'img/border-vertical.png' %}";
-    var fondo2 = "{% static 'img/fondo2.jpg' %}";
-    var fondo_carrera =  "{% static 'img/fondo_carrera.jpg' %}";
-    var cx =  "{% static 'resources/images/cx.png' %}";
-    var gameovervehiculo = "{% static 'resources/images/gameovervehiculo.png' %}";
-    var ComoJugarCarrera = "{% static 'resources/images/ComoJugarCarrera.png' %}";
-    var HasGanadoCarrera =  "{% static 'resources/images/HasGanadoCarrera.png' %}";
-    var fondo_carrera = "{% static 'resources/images/ESCENARIO 2.png' %}";
-    var back = "{% static 'resources/images/background.png' %}";
-    var menu = "{% static 'img/menu.png' %}";
-    var planetaRojo =  "{% static 'img/planetaRojo.png' %}";
-    var nave_1mini = "{% static 'resources/images/nave-camisa-D -mini.png' %}";
-    var nave_2mini = "{% static 'resources/images/nave_03mini.png' %}";
-    var planeta = "{% static 'img/planeta.png' %}";
-    var planetaSprite = "{% static 'img/planeta.png' %}";
-    var prota = "{% static 'resources/images/prota.png' %}";
-    var anta = "{% static 'resources/images/antagonista.png' %}";
-    var cfn = "{% static 'resources/images/planeta_08.png' %}";
-    var carrera = "{% static 'resources/images/planeta_01.png' %}";
-    var industria = "{% static 'resources/images/planeta_02.png' %}";
-    var planeta3 = "{% static 'resources/images/planeta_03.png' %}";
-    var planeta4 = "{% static 'resources/images/planeta_04.png' %}";
-    var planeta5 = "{% static 'resources/images/planeta_05.png' %}";
-    var planeta6 = "{% static 'resources/images/planeta_06.png' %}";
-    var planeta7 = "{% static 'resources/images/planeta_07.png' %}";
-    var glow1 = "{% static 'resources/images/LightRotate1.png' %}";
-    var roboto = "{% static 'resources/images/ROBOTA.png' %}";
-    var future_png = "{% static 'resources/fonts/espace/font.png' %}";
-	var button_audio = "{% static 'img/button-audio.png' %}";
-	var button_start = "{% static 'img/button-start.png' %}";
-	var botonAtlas_png = "{% static 'img/button_texture_atlas.png' %}";
-	var botonAtlas_json = "{% static 'src/button_texture_atlas.json' %}";
-    var future_font = "{% static 'resources/fonts/espace/font.fnt' %}";
-    var bounce_ogg = "{% static 'audio/bounce.ogg' %}";
-    var bounce_mp3 = "{% static 'audio/bounce.mp3' %}";
-    var bounce_m4a = "{% static 'audio/bounce.m4a' %}";
+		<!-- Start Contact -->
+		<section id="mu-contact">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12">
+						<div class="mu-contact-area">
 
-    //RPG
-    var csv01 = "{% static 'resources/maps/catastrophi_level2.csv' %}";
-    var catastrophi_tiles_16 = "{% static 'resources/maps/catastrophi_tiles_16.png' %}";
-    var spaceman = "{% static 'resources/maps/spaceman.png' %}";
+							<div class="mu-title-area">
+								<h2 class="mu-heading-title">Contactanos</h2>
+								<span class="mu-title-dot"></span>
+								 <!-- <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever</p>
+							 -->
+							</div>
+
+							
+
+							<!-- Start Contact Content -->
+							<div class="mu-contact-content">
+								<div class="row">
+
+								<div class="col-md-7">
+									<div class="mu-contact-left">
+										<div id="form-messages"></div>
+											<form id="ajax-contact" method="post" action="mailer.php" class="mu-contact-form">
+												<div class="form-group">                
+													<input type="text" class="form-control" placeholder="Nombres" id="name" name="name" required>
+												</div>
+												<div class="form-group">                
+													<input type="email" class="form-control" placeholder="Correo" id="email" name="email" required>
+												</div>              
+												<div class="form-group">
+													<textarea class="form-control" placeholder="Mensaje" id="message" name="message" required></textarea>
+												</div>
+												<button type="submit" class="mu-send-msg-btn"><span>Enviar</span></button>
+								            </form>
+										</div>
+									</div>
+
+									<div class="col-md-5">
+										<div class="mu-contact-right">
+											<div class="mu-contact-right-single">
+												<div class="mu-icon"><i class="fa fa-map-marker"></i></div>
+												<p><strong>Dirección</strong></p>
+												<p>Dooley Branch Rd Millen, GA 30442, USA</p>
+											</div>
+
+											<div class="mu-contact-right-single">
+												<div class="mu-icon"><i class="fa fa-phone"></i></div>
+												<p><strong>Celular</strong></p>
+												<p>+90 987 678 9834</p>
+												<p>+90 567 098 785</p>
+											</div>
+
+											<div class="mu-contact-right-single">
+												<div class="mu-icon"><i class="fa fa-envelope"></i></div>
+												<p><strong>Correo</strong></p>
+												<p>contact@domain.com</p>
+												<p>support@domain.com</p>
+											</div>
+
+											<div class="mu-contact-right-single">
+												<div class="mu-social-media">
+													<a href="#"><i class="fa fa-facebook"></i></a>
+													<a href="#"><i class="fa fa-twitter"></i></a>
+													<a href="#"><i class="fa fa-google-plus"></i></a>
+													<a href="#"><i class="fa fa-linkedin"></i></a>
+													<a href="#"><i class="fa fa-youtube"></i></a>
+												</div>
+											</div>
+
+										</div>
+									</div>		
+
+								</div>
+							</div>
+							<!-- End Contact Content -->
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- End Contact -->
+
+	</main>
+	
+	<!-- End main content -->	
+			
+			
+	<!-- Start footer -->
+	<footer id="mu-footer" role="contentinfo">
+			<div class="container">
+				<div class="mu-footer-area">
+					<p class="mu-copy-right">&copy; Copyright <a rel="nofollow" href="http://markups.io">markups.io</a>. All right reserved.</p>
+				</div>
+			</div>
+
+	</footer>
+	<!-- End footer -->
+
+	
+	
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <!-- Bootstrap -->
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<!-- Slick slider -->
+    <script type="text/javascript" src="{% static 'js/slick.min.js' %}"></script>
+    <!-- Ajax contact form  -->
+    <script type="text/javascript" src="{% static 'js/app.js' %}"></script>
+  
     
-</script>
+	
+    <!-- Custom js -->
+	<script type="text/javascript" src="{% static 'js/custom.js' %}"></script>
 
-
-<script>
-(function() {
-	var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'game');
-	game.state.add('Boot', Ball.Boot);
-	game.state.add('MainMenu', Ball.MainMenu);
-	game.state.add('Howto', Ball.Howto);
-	game.state.add('Preloader', Ball.Preloader);
-	game.state.add('Carrera', Ball.Carrera);
-	game.state.add('WinCarrera', Ball.WinCarrera);
-	game.state.add('Game', Ball.Game);
-	game.state.add('AnimCarrera', Ball.AnimCarrera);
-	game.state.add('ComoJugarCarrera', Ball.ComoJugarCarrera);
-	game.state.add('Desarrollo', Ball.Desarrollo);
-  	game.state.add('Mapa', Ball.Mapa);
-	game.state.add('GameOverDesarrollo', Ball.GameOverDesarrollo);
-	game.state.add('WinDesarrollo', Ball.WinDesarrollo);
-	game.state.add('ComoJugarDesarrollo', Ball.ComoJugarDesarrollo);
-	game.state.add('GameOverCarrera', Ball.GameOverCarrera);
-
-	game.state.start('Boot');
-})();
-
-</script>
-
-
-
-
-
-<div
-  class="fb-like"
-  data-share="true"
-  data-width="450"
-  data-show-faces="true">
-</div>
-
-
-
-</body>
+	
+	
+    
+  </body>
 </html>

@@ -8,9 +8,8 @@ Ball.Mapa.prototype = {
 
 		dialogo = [
 		'',
-		'Bienvenido humano\nesto es "Adventure Galaxy"',
-		'Soy Roboto y te ayudare\nen esta aventura,',
-		'Para comenzar escoge una\nmision en el mapa',
+		'Bienvenido aventurero\nElige una aventua de nuestros héroes',
+		'Soy Roboto y te ayudare\na revivir la historia,',
 		];
 
 		index = 0; 
@@ -121,10 +120,10 @@ Ball.Mapa.prototype = {
 },
 
 	irCarrera: function() {
-	 	this.game.state.start('ComoJugarCarrera');
+	 	this.game.state.start('Game');
 	},
 	irDesarrollo: function() {
-		this.game.state.start('ComoJugarDesarrollo');
+		this.game.state.start('Game');
 	},
 	initLevels: function() {
 

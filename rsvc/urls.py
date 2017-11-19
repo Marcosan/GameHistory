@@ -23,4 +23,5 @@ from mainpage.views import *
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', views.index),
+    url(r'^game/$', views.game),
 ]
